@@ -1,41 +1,33 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { ShowOrders } from "./showOrders";
-import { Basket } from "../basket";
-import { FaBasketShopping } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import styled from 'styled-components';
+
+import { ShowOrders } from './showOrders';
+import { Basket } from '../basket';
+import { FaBasketShopping } from 'react-icons/fa6';
 
 const Wrapper = styled.header`
   display: flex;
   padding: 10x 20px;
-  width: 1280px;
-  margin: 50px auto;
 `;
 
 const StyledWrapper = styled.div`
-padding: 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
 `;
 
 const Nav = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
-
-  
 `;
 
 const Logo = styled.span`
-    font-weight: 600 ;
-    font-size: 30px;
-
-  
+  font-weight: 600;
+  font-size: 30px;
 `;
-
 
 const Shop = styled.div`
   display: flex;
@@ -46,16 +38,16 @@ const Shop = styled.div`
 `;
 
 const StyledLink = styled.a`
-   float: right;
-   list-style: none;
-   margin-left: 25px;
+  float: right;
+  list-style: none;
+  margin-left: 25px;
   font-size: 17px;
   display: inline;
   text-decoration: none;
   color: #414141;
 `;
 
-export const Header = (props) => {
+export const Header = ({ orders, onDelete }) => {
   const [cartOpen, setCartOpen] = useState(false);
 
   return (
@@ -64,7 +56,11 @@ export const Header = (props) => {
         <Logo>Mebel House</Logo>
         <Shop>
           <FaBasketShopping onClick={() => setCartOpen(!cartOpen)} />
-          {cartOpen ? <ShowOrders /> : <Basket />}
+          {cartOpen ? (
+            <ShowOrders orders={orders} onDelete={onDelete} />
+          ) : (
+            <Basket />
+          )}
         </Shop>
         <Nav>
           <li>

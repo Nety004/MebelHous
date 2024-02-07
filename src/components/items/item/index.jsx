@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -6,7 +6,6 @@ const Wrapper = styled.div`
   gap: 10px;
   flex-wrap: wrap;
   width: 400px;
-
 `;
 
 const Image = styled.img`
@@ -15,7 +14,6 @@ const Image = styled.img`
   background-size: cover;
   background-position: center;
   transition: transform 500ms ease;
-
 `;
 
 const Price = styled.div`
@@ -26,12 +24,12 @@ const Price = styled.div`
 export const Item = ({ item, onAdd }) => {
   return (
     <Wrapper>
-      <Image src={"./images/" + item.img} alt={item.title} />
+      <Image src={'./images/' + item.img} alt={item.title} />
       <h2>{item.title}</h2>
       <p>{item.desc}</p>
       <Price>
         <b>{item.price}₽</b>
-        <span nClick={() => onAdd(item)}>+</span>
+        <button onClick={() => onAdd(item)}>+</button>
       </Price>
     </Wrapper>
   );

@@ -1,11 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 25px;
- 
 `;
 
 const StyledBlock = styled.div`
@@ -14,39 +13,37 @@ const StyledBlock = styled.div`
   padding: 10px 20px;
   border: 1px solid transparent;
   transition: all 500ms ease;
-  
-
 `;
 
 export const Categories = ({ chooseCategory }) => {
   const categories = [
     {
-      key: "all",
-      name: "Все",
+      key: 'all',
+      name: 'Все',
     },
     {
-      key: "Диван",
-      name: "Диваны",
+      key: 'Диван',
+      name: 'Диваны',
     },
     {
-      key: "Стул",
-      name: "Стулья",
+      key: 'Стул',
+      name: 'Стулья',
     },
     {
-      key: "Кресло",
-      name: "Кресла",
+      key: 'Кресло',
+      name: 'Кресла',
     },
     {
-      key: "Стол",
-      name: "Столы",
+      key: 'Стол',
+      name: 'Столы',
     },
     {
-      key: "Шкаф",
-      name: "Шкафы",
+      key: 'Шкаф',
+      name: 'Шкафы',
     },
     {
-      key: "Тумба",
-      name: "Тумбы",
+      key: 'Тумба',
+      name: 'Тумбы',
     },
   ];
 

@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const BottomText = styled.span`
-   text-align: center;
-    margin-top: 50px;
-`
+  text-align: center;
+  margin-top: 50px;
+`;
 
 export const Footer = () => {
-  return <BottomText >Все права защищены &copy;</BottomText >;
+  return <BottomText>Все права защищены &copy;</BottomText>;
 };

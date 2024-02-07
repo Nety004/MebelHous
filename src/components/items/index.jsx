@@ -1,21 +1,17 @@
-import styled from "styled-components";
-import { Item } from "./item";
+import styled from 'styled-components';
+import { Item } from './item';
 
 const Wrapper = styled.main`
-margin-top: 20;
+  margin-top: 20;
   display: flex;
   gap: 20px;
-flex-wrap: wrap;
-justify-content: space-between;
-margin-bottom: 50px;
-
-
-
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
-const StyledItem = styled(Item)``;
+//const StyledItem = styled(Item)``;
 
-export const Items = ({ items, onAdd }) => {
+export const ItemList = ({ items, onAdd }) => {
   return (
     <Wrapper>
       {items.map((el) => (

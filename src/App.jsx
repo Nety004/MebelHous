@@ -1,29 +1,27 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useState } from 'react';
+import styled from 'styled-components';
 
-import { GlobalStyles } from "./global-styles";
+import { GlobalStyles } from './global-styles';
 
-import { Categories } from "./components/categories";
-import { Footer } from "./components/footer";
-import { Header } from "./components/header";
-import { Items } from "./components/items";
-import { items } from "./data-base";
+import { Categories } from './components/categories';
+import { Footer } from './components/footer';
+import { Header } from './components/header';
+import { ItemList } from './components/items';
+import { items } from './data-base';
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
- 
 `;
-
 
 const App = () => {
   const [orders, setOrders] = useState([]);
   const [currentItems, setCurrentItems] = useState([]);
 
   const chooseCategory = (category) => {
-    if (category === "all") {
+    if (category === 'all') {
       setCurrentItems(items);
       return;
     }
@@ -39,7 +37,11 @@ const App = () => {
     orders.forEach((el) => {
       if (el.id === item.id) isInArray = true;
     });
-    if (!isInArray) setOrders([...orders, item]);
+
+    if (!isInArray) {
+      const newOrders = [...orders, item];
+      setOrders(newOrders);
+    }
   };
 
   return (
@@ -47,7 +49,7 @@ const App = () => {
       <GlobalStyles />
       <Header orders={orders} onDelete={deleteOrder} />
       <Categories chooseCategory={chooseCategory} />
-      <Items items={currentItems} onAdd={addToOrder} />
+      <ItemList items={currentItems} onAdd={addToOrder} />
       <Footer />
     </Wrapper>
   );

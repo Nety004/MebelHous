@@ -1,6 +1,3 @@
-
-
-
 export const Basket = () => {
   return (
     <div>
